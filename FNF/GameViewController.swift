@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        /*
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content
         // including entities and graphs.
         if let scene = GKScene(fileNamed: "GameScene") {
@@ -39,6 +40,16 @@ class GameViewController: UIViewController {
                 }
             }
         }
+        */
+        
+        if let view = self.view as! SKView? {
+            if let scene = SKScene(fileNamed: "GameStartScene") {
+                scene.scaleMode = .aspectFill
+                
+                view.presentScene(scene)
+            }
+        }
+        
     }
 
     override var shouldAutorotate: Bool {
