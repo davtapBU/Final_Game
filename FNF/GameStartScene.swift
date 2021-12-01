@@ -8,3 +8,6 @@
 import SpriteKit
 
 class GameStartScene: SKScene
+{
+    
+}

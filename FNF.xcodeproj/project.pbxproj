@@ -7,14 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E73FD4A5275529E000B94941 /* spritekit scenes in Resources */ = {isa = PBXBuildFile; fileRef = E73FD4A4275529DF00B94941 /* spritekit scenes */; };
-		E73FD4A7275529FB00B94941 /* swift files in Resources */ = {isa = PBXBuildFile; fileRef = E73FD4A6275529FA00B94941 /* swift files */; };
+		E7D247872757D132003BDC18 /* GameStartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D247842757D132003BDC18 /* GameStartScene.swift */; };
+		E7D247882757D132003BDC18 /* BeatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D247852757D132003BDC18 /* BeatMap.swift */; };
+		E7D247892757D132003BDC18 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D247812757D131003BDC18 /* GameOverScene.swift */; };
+		E7D2478A2757D132003BDC18 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D247832757D132003BDC18 /* GameScene.swift */; };
+		E7D2478B2757D132003BDC18 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D247862757D132003BDC18 /* GameViewController.swift */; };
+		E7D2478C2757D132003BDC18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D247822757D131003BDC18 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E73FD48A275527DC00B94941 /* FNF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FNF.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E73FD4A4275529DF00B94941 /* spritekit scenes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "spritekit scenes"; sourceTree = "<group>"; };
-		E73FD4A6275529FA00B94941 /* swift files */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "swift files"; sourceTree = "<group>"; };
+		E7D247812757D131003BDC18 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		E7D247822757D131003BDC18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E7D247832757D132003BDC18 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = "swift files/GameScene.swift"; sourceTree = "<group>"; };
+		E7D247842757D132003BDC18 /* GameStartScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStartScene.swift; sourceTree = "<group>"; };
+		E7D247852757D132003BDC18 /* BeatMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatMap.swift; sourceTree = "<group>"; };
+		E7D247862757D132003BDC18 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameViewController.swift; path = "swift files/GameViewController.swift"; sourceTree = "<group>"; };
+		E7D2478D2757D13E003BDC18 /* GameOverScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOverScene.sks; sourceTree = "<group>"; };
+		E7D2478E2757D13E003BDC18 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = Actions.sks; path = "spritekit scenes/Actions.sks"; sourceTree = "<group>"; };
+		E7D2478F2757D13F003BDC18 /* GameStartScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameStartScene.sks; sourceTree = "<group>"; };
+		E7D247902757D13F003BDC18 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,8 +59,16 @@
 		E73FD48C275527DC00B94941 /* FNF */ = {
 			isa = PBXGroup;
 			children = (
-				E73FD4A6275529FA00B94941 /* swift files */,
-				E73FD4A4275529DF00B94941 /* spritekit scenes */,
+				E7D2478E2757D13E003BDC18 /* Actions.sks */,
+				E7D2478D2757D13E003BDC18 /* GameOverScene.sks */,
+				E7D247902757D13F003BDC18 /* GameScene.sks */,
+				E7D2478F2757D13F003BDC18 /* GameStartScene.sks */,
+				E7D247822757D131003BDC18 /* AppDelegate.swift */,
+				E7D247852757D132003BDC18 /* BeatMap.swift */,
+				E7D247812757D131003BDC18 /* GameOverScene.swift */,
+				E7D247832757D132003BDC18 /* GameScene.swift */,
+				E7D247842757D132003BDC18 /* GameStartScene.swift */,
+				E7D247862757D132003BDC18 /* GameViewController.swift */,
 			);
 			path = FNF;
 			sourceTree = "<group>";
@@ -111,8 +131,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E73FD4A5275529E000B94941 /* spritekit scenes in Resources */,
-				E73FD4A7275529FB00B94941 /* swift files in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +141,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7D2478C2757D132003BDC18 /* AppDelegate.swift in Sources */,
+				E7D2478B2757D132003BDC18 /* GameViewController.swift in Sources */,
+				E7D247882757D132003BDC18 /* BeatMap.swift in Sources */,
+				E7D247892757D132003BDC18 /* GameOverScene.swift in Sources */,
+				E7D2478A2757D132003BDC18 /* GameScene.swift in Sources */,
+				E7D247872757D132003BDC18 /* GameStartScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -4,6 +4,7 @@
 //
 //  Created by David Tapia on 11/17/21.
 //
+import UIKit
 
 struct BeatMap {
     
