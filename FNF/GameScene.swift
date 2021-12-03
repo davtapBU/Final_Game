@@ -63,7 +63,48 @@ class GameScene: SKScene {
         self.lastUpdateTime = currentTime
     }
     
-    func queueNote(dline: DispatchTime)
+    func playSong(map: BeatMap)
+    {
+        // Play the music
+        let backgroundSound = SKAudioNode(fileNamed: map.fileName);
+        self.addChild(backgroundSound)
+        
+        // Wait the set delay before queing notes
+        
+        // Initialize time for queing
+        var curTime : DispatchTime = .now()
+        
+        // Calculate bps
+        let bps : CGFloat = map.bpm/60.0
+        
+        // Queue notes and increase dispatch delay of next note depending on current note length
+        map.notes.forEach { note in
+            switch(note.length)
+            {
+            case lengths.Whole:
+                queueNote(dline: curTime, note: note)
+                curTime = curTime + (bps*4)
+            case lengths.Half:
+                queueNote(dline: curTime, note: note)
+                curTime = curTime + (bps*2)
+            case lengths.Quarter:
+                queueNote(dline: curTime, note: note)
+                curTime = curTime + bps
+            case lengths.Eighth:
+                queueNote(dline: curTime, note: note)
+                curTime = curTime + (bps/2)
+            case lengths.Sixteenth:
+                queueNote(dline: curTime, note: note)
+                curTime = curTime + (bps/4)
+            case lengths.ThirtySecond:
+                queueNote(dline: curTime, note: note)
+                curTime = curTime + (bps/8)
+            default: break
+            }
+        }
+    }
+    
+    func queueNote(dline: DispatchTime, note: Note)
     {
         DispatchQueue.main.asyncAfter(deadline: dline) {
             
