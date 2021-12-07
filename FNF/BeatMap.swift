@@ -29,6 +29,9 @@ struct BeatMap {
     // File name of song
     let fileName: String
     
+    // Time delay before first note of song
+    let startDelay: CGFloat
+    
     var notes: [Note]
 }
 
