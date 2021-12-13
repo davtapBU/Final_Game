@@ -32,6 +32,8 @@ class GameScene: SKScene {
     
     let tapLine: CGFloat = -500
     
+    
+    
     override func sceneDidLoad() {
         createWorld()
         playSong(map: ttls)
@@ -52,11 +54,26 @@ class GameScene: SKScene {
         if (touches.first==nil) {
             return
         }
+        if (note1 == nil || note2 == nil || note3 == nil || note4 == nil) {
+            return
+        }
+        let note1Pos = note1.position
+        let note2Pos = note2.position
+        let note3Pos = note3.position
+        let note4Pos = note4.position
+        
         for touch in touches {
             let location = touch.location(in:self)
             if button1.contains(location) {
                 print("TOUCHED button1")
-                scoreKeeper+=1
+                if (button1.contains(note1Pos) || button1.contains(note2Pos) || button1.contains(note3Pos) || button2.contains(note4Pos)){
+                    
+                    print("THE NOTE IS IN THE BUTTON")
+                    scoreKeeper+=1
+                }
+                
+                    
+               
                 
             }
             if button2.contains(location){
@@ -123,7 +140,7 @@ class GameScene: SKScene {
         button1.position = CGPoint(x: -screen_width+40, y: tapLine)
         button2.position = CGPoint(x: -screen_width+200, y: tapLine)
         button3.position = CGPoint(x: screen_width-200, y: tapLine)
-        button4.position = CGPoint(x: screen_width-50, y: tapLine)
+        button4.position = CGPoint(x: screen_width-40, y: tapLine)
         
         addChild(button1)
         addChild(button2)
@@ -156,16 +173,16 @@ class GameScene: SKScene {
         
         switch(dir){
         case directions.Left:
-            sprite.position = CGPoint(x: -screen_width+100, y: screen_height)
+            sprite.position = CGPoint(x: -screen_width+40, y: screen_height)
             note1 = sprite
         case directions.Down:
-            sprite.position = CGPoint(x: -screen_width+290, y: screen_height)
+            sprite.position = CGPoint(x: -screen_width+200, y: screen_height)
             note2 = sprite
         case directions.Up:
-            sprite.position = CGPoint(x: screen_width-290, y: screen_height)
+            sprite.position = CGPoint(x: screen_width-200, y: screen_height)
             note3 = sprite
         case directions.Right:
-            sprite.position = CGPoint(x: screen_width-100, y: screen_height)
+            sprite.position = CGPoint(x: screen_width-40, y: screen_height)
             note4 = sprite
         default:
             break
