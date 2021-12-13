@@ -15,7 +15,7 @@ class GameScene: SKScene {
     var graphs = [String : GKGraph]()
     
     private var lastUpdateTime : TimeInterval = 0
-    private var scoreKeeper : Score = 0
+    private var scoreKeeper : Int = 0
     
     var music: AVAudioPlayer!
     var firstNote: Bool = true
