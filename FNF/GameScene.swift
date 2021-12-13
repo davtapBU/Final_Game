@@ -70,7 +70,7 @@ class GameScene: SKScene {
             }
             if (button4.contains(location)) {
                 print("butt4 touch")
-                scoreLeeper+=1
+                scoreKeeper+=1
             }
         }
     }
