@@ -15,6 +15,7 @@ class GameScene: SKScene {
     var graphs = [String : GKGraph]()
     
     private var lastUpdateTime : TimeInterval = 0
+    private var scoreKeeper : Score = 0
     
     var music: AVAudioPlayer!
     var firstNote: Bool = true
@@ -47,6 +48,31 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("touch begins")
+        if (touches.first==nil) {
+            return
+        }
+        for touch in touches {
+            let location = touch.location(in:self)
+            if button1.contains(location) {
+                print("TOUCHED button1")
+                scoreKeeper+=1
+                
+            }
+            if button2.contains(location){
+                print("TOUCHED BUTTON2")
+                scoreKeeper+=1
+            }
+            
+            if (button3.contains(location)){
+                print("button3 touched")
+                scoreKeeper+=1
+            }
+            if (button4.contains(location)) {
+                print("butt4 touch")
+                scoreLeeper+=1
+            }
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
