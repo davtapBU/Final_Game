@@ -94,7 +94,7 @@ class GameScene: SKScene {
         button3.setScale(1.5)
         button4.setScale(1.5)
         
-        button1.position = CGPoint(x: -screen_width+50, y: tapLine)
+        button1.position = CGPoint(x: -screen_width+40, y: tapLine)
         button2.position = CGPoint(x: -screen_width+200, y: tapLine)
         button3.position = CGPoint(x: screen_width-200, y: tapLine)
         button4.position = CGPoint(x: screen_width-50, y: tapLine)
