@@ -16,6 +16,8 @@ class GameViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bg")!)
+        
         
         /*
         // Load 'GameScene.sks' as a GKScene. This provides gameplay related content

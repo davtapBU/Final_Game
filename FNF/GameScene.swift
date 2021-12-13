@@ -78,14 +78,25 @@ class GameScene: SKScene {
     }
     
     func createWorld() {
+        // Create the background node
+        let backgroundNode = SKSpriteNode(imageNamed: "bg")
+        backgroundNode.zPosition = -2
+        backgroundNode.setScale(2.2)
+        addChild(backgroundNode)
+        
         button1 = SKSpriteNode(imageNamed: "butt1")
         button2 = SKSpriteNode(imageNamed: "butt2")
         button3 = SKSpriteNode(imageNamed: "butt3")
         button4 = SKSpriteNode(imageNamed: "butt4")
         
-        button1.position = CGPoint(x: -screen_width+300, y: tapLine)
-        button2.position = CGPoint(x: -screen_width+300, y: tapLine)
-        button3.position = CGPoint(x: screen_width-300, y: tapLine)
+        button1.setScale(1.5)
+        button2.setScale(1.5)
+        button3.setScale(1.5)
+        button4.setScale(1.5)
+        
+        button1.position = CGPoint(x: -screen_width+100, y: tapLine)
+        button2.position = CGPoint(x: -screen_width+290, y: tapLine)
+        button3.position = CGPoint(x: screen_width-290, y: tapLine)
         button4.position = CGPoint(x: screen_width-100, y: tapLine)
         
         addChild(button1)
@@ -122,10 +133,10 @@ class GameScene: SKScene {
             sprite.position = CGPoint(x: -screen_width+100, y: screen_height)
             note1 = sprite
         case directions.Down:
-            sprite.position = CGPoint(x: -screen_width+300, y: screen_height)
+            sprite.position = CGPoint(x: -screen_width+290, y: screen_height)
             note2 = sprite
         case directions.Up:
-            sprite.position = CGPoint(x: screen_width-300, y: screen_height)
+            sprite.position = CGPoint(x: screen_width-290, y: screen_height)
             note3 = sprite
         case directions.Right:
             sprite.position = CGPoint(x: screen_width-100, y: screen_height)
