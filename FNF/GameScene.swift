@@ -19,7 +19,20 @@ class GameScene: SKScene {
     var music: AVAudioPlayer!
     var firstNote: Bool = true
     
+    var button1: SKSpriteNode!
+    var button2: SKSpriteNode!
+    var button3: SKSpriteNode!
+    var button4: SKSpriteNode!
+    
+    var note1: SKSpriteNode!
+    var note2: SKSpriteNode!
+    var note3: SKSpriteNode!
+    var note4: SKSpriteNode!
+    
+    let tapLine: CGFloat = -500
+    
     override func sceneDidLoad() {
+        createWorld()
         playSong(map: ttls)
     }
     
@@ -64,8 +77,24 @@ class GameScene: SKScene {
         self.lastUpdateTime = currentTime
     }
     
-    func playSong(map: BeatMap)
-    {
+    func createWorld() {
+        button1 = SKSpriteNode(imageNamed: "butt1")
+        button2 = SKSpriteNode(imageNamed: "butt2")
+        button3 = SKSpriteNode(imageNamed: "butt3")
+        button4 = SKSpriteNode(imageNamed: "butt4")
+        
+        button1.position = CGPoint(x: -screen_width+300, y: tapLine)
+        button2.position = CGPoint(x: -screen_width+300, y: tapLine)
+        button3.position = CGPoint(x: screen_width-300, y: tapLine)
+        button4.position = CGPoint(x: screen_width-100, y: tapLine)
+        
+        addChild(button1)
+        addChild(button2)
+        addChild(button3)
+        addChild(button4)
+    }
+    
+    func playSong(map: BeatMap) {
         if let musicURL = Bundle.main.url(forResource: "ttls", withExtension: "m4a") {
             if let audioPlayer = try? AVAudioPlayer(contentsOf: musicURL) {
                 music = audioPlayer
@@ -90,13 +119,17 @@ class GameScene: SKScene {
         
         switch(dir){
         case directions.Left:
-            sprite.position = CGPoint(x: -220, y: screen_height)
+            sprite.position = CGPoint(x: -screen_width+100, y: screen_height)
+            note1 = sprite
         case directions.Down:
-            sprite.position = CGPoint(x: -110, y: screen_height)
+            sprite.position = CGPoint(x: -screen_width+300, y: screen_height)
+            note2 = sprite
         case directions.Up:
-            sprite.position = CGPoint(x: 110, y: screen_height)
+            sprite.position = CGPoint(x: screen_width-300, y: screen_height)
+            note3 = sprite
         case directions.Right:
-            sprite.position = CGPoint(x: 220, y: screen_height)
+            sprite.position = CGPoint(x: screen_width-100, y: screen_height)
+            note4 = sprite
         default:
             break
         }
@@ -104,7 +137,7 @@ class GameScene: SKScene {
         
         addChild(sprite)
         
-        let movement = SKAction.move(by: CGVector(dx:0, dy:2 * -screen_height), duration: 2)
+        let movement = SKAction.move(by: CGVector(dx:0, dy:2 * -screen_height), duration: 2.3)
         let removal = SKAction.removeFromParent()
         
         sprite.run(SKAction.sequence([movement, removal]))
