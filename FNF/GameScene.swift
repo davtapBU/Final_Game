@@ -181,7 +181,7 @@ class GameScene: SKScene {
     
     @objc func queueNote(timer: Timer) {
         print("called!")
-        let sprite = SKSpriteNode(color: UIColor.red, size: CGSize(width:40, height:40))
+        let sprite = SKSpriteNode(color: UIColor.red, size: CGSize(width:75, height:75))
         sprite.texture = SKTexture(imageNamed: "playnote")
         sprite.setScale(3.0)
         let dir : Int = (timer.userInfo as? Int)!
