@@ -65,29 +65,44 @@ class GameScene: SKScene {
         for touch in touches {
             let location = touch.location(in:self)
             if button1.contains(location) {
-                print("TOUCHED button1")
-                if (button1.contains(note1Pos) || button1.contains(note2Pos) || button1.contains(note3Pos) || button2.contains(note4Pos)){
+               // print("TOUCHED button1")
+                if (button1.contains(note1Pos) || button1.contains(note2Pos) || button1.contains(note3Pos) || button1.contains(note4Pos)){
                     
-                    print("THE NOTE IS IN THE BUTTON")
+                    
                     scoreKeeper+=1
-                }
-                
                     
-               
+                    print("Hit @ 1 : ")
+                    print(scoreKeeper)
+                }
                 
             }
             if button2.contains(location){
-                print("TOUCHED BUTTON2")
-                scoreKeeper+=1
+                //print("TOUCHED BUTTON2")
+              if (button2.contains(note1Pos) || button2.contains(note2Pos) || button2.contains(note3Pos) || button2.contains(note4Pos)){
+                  scoreKeeper+=1
+                  
+                  print("Hit @ 2 : ")
+                  print(scoreKeeper)
+              }
+                    
             }
             
             if (button3.contains(location)){
-                print("button3 touched")
-                scoreKeeper+=1
+                if (button3.contains(note1Pos) || button3.contains(note2Pos) || button3.contains(note3Pos) || button3.contains(note4Pos)){
+                    scoreKeeper+=1
+                    
+                    print("Hit @ 3: ")
+                    print(scoreKeeper)
+                }
             }
             if (button4.contains(location)) {
-                print("butt4 touch")
-                scoreKeeper+=1
+                if (button4.contains(note1Pos) || button4.contains(note2Pos) || button4.contains(note3Pos) || button4.contains(note4Pos)){
+                    
+                    scoreKeeper+=1
+                    
+                    print("Hit @ 4 : ")
+                    print(scoreKeeper)
+                }
             }
         }
     }
