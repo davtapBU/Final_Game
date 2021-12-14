@@ -43,6 +43,7 @@ enum directions{
     static let Right: Int = 1
     static let Up: Int = 2
     static let Down: Int = 3
+    static let End: Int = 4
 }
 
 //Length will tell us how

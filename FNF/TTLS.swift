@@ -51,6 +51,7 @@ let ttlsbmap = [
     Note(direction: directions.Right, length: lengths.Eighth, held: false, heldLength: 0, heldNum: 0),
     Note(direction: directions.Right, length: lengths.Eighth, held: false, heldLength: 0, heldNum: 0),
     Note(direction: directions.Up, length: lengths.Quarter, held: false, heldLength: 0, heldNum: 0),
+    Note(direction: directions.End, length: lengths.Quarter, held: false, heldLength: 0, heldNum: 0),
 ]
 
 let ttls = BeatMap(bpm: 60.0, songName: "Twinkle Twinkle Little Star", fileName: "ttls", startDelay: 1, notes: ttlsbmap)

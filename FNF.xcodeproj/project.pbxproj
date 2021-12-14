@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BAE9BEA02767FCB900FFBC8F /* ttls.m4a.html in Resources */ = {isa = PBXBuildFile; fileRef = BAE9BE9E2767FCB900FFBC8F /* ttls.m4a.html */; };
-		BAE9BEA12767FCB900FFBC8F /* ttls.mp3.html in Resources */ = {isa = PBXBuildFile; fileRef = BAE9BE9F2767FCB900FFBC8F /* ttls.mp3.html */; };
+		E72E59E3276831D40046A9B0 /* ttls.m4a in Resources */ = {isa = PBXBuildFile; fileRef = E72E59E2276831D40046A9B0 /* ttls.m4a */; };
 		E7D247882757D132003BDC18 /* BeatMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D247852757D132003BDC18 /* BeatMap.swift */; };
 		E7D2478C2757D132003BDC18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D247822757D131003BDC18 /* AppDelegate.swift */; };
 		E7D2479227668CF8003BDC18 /* TTLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D2479127668CF8003BDC18 /* TTLS.swift */; };
@@ -26,8 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BAE9BE9E2767FCB900FFBC8F /* ttls.m4a.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ttls.m4a.html; sourceTree = "<group>"; };
-		BAE9BE9F2767FCB900FFBC8F /* ttls.mp3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = ttls.mp3.html; sourceTree = "<group>"; };
+		E72E59E2276831D40046A9B0 /* ttls.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = ttls.m4a; path = ../ttls.m4a; sourceTree = "<group>"; };
 		E73FD48A275527DC00B94941 /* FNF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FNF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7D247822757D131003BDC18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7D247852757D132003BDC18 /* BeatMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeatMap.swift; sourceTree = "<group>"; };
@@ -59,8 +57,7 @@
 		E72E7D5B276719AC00356BBC /* MusicFiles */ = {
 			isa = PBXGroup;
 			children = (
-				BAE9BE9E2767FCB900FFBC8F /* ttls.m4a.html */,
-				BAE9BE9F2767FCB900FFBC8F /* ttls.mp3.html */,
+				E72E59E2276831D40046A9B0 /* ttls.m4a */,
 			);
 			path = MusicFiles;
 			sourceTree = "<group>";
@@ -168,8 +165,7 @@
 				F12E6DA32757DA2E00915F05 /* Main.storyboard in Resources */,
 				F12E6DA92757DC5400915F05 /* GameScene.sks in Resources */,
 				F12E6DA82757DC5100915F05 /* GameStartScene.sks in Resources */,
-				BAE9BEA12767FCB900FFBC8F /* ttls.mp3.html in Resources */,
-				BAE9BEA02767FCB900FFBC8F /* ttls.m4a.html in Resources */,
+				E72E59E3276831D40046A9B0 /* ttls.m4a in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

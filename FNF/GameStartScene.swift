@@ -15,7 +15,7 @@ class GameStartScene: SKScene {
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.yellow
         
-        label.text = "insert_title"
+        label.text = "Twinkle night Funkin'"
         label.fontColor = SKColor.black
         label.fontSize = 48
         label.position = CGPoint(x: 0, y: 0)

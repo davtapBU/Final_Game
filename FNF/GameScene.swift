@@ -20,6 +20,8 @@ class GameScene: SKScene {
     var music: AVAudioPlayer!
     var firstNote: Bool = true
     
+    let label = SKLabelNode(fontNamed: "Chalkduster")
+    
     var button1: SKSpriteNode!
     var button2: SKSpriteNode!
     var button3: SKSpriteNode!
@@ -66,7 +68,7 @@ class GameScene: SKScene {
             let location = touch.location(in:self)
             if button1.contains(location) {
                // print("TOUCHED button1")
-                if (button1.contains(note1Pos) || button1.contains(note2Pos) || button1.contains(note3Pos) || button1.contains(note4Pos)){
+                if (button1.contains(note1Pos)) {
                     
                     
                     scoreKeeper+=1
@@ -78,7 +80,7 @@ class GameScene: SKScene {
             }
             if button2.contains(location){
                 //print("TOUCHED BUTTON2")
-              if (button2.contains(note1Pos) || button2.contains(note2Pos) || button2.contains(note3Pos) || button2.contains(note4Pos)){
+              if (button2.contains(note2Pos)){
                   scoreKeeper+=1
                   
                   print("Hit @ 2 : ")
@@ -88,7 +90,7 @@ class GameScene: SKScene {
             }
             
             if (button3.contains(location)){
-                if (button3.contains(note1Pos) || button3.contains(note2Pos) || button3.contains(note3Pos) || button3.contains(note4Pos)){
+                if (button3.contains(note3Pos)){
                     scoreKeeper+=1
                     
                     print("Hit @ 3: ")
@@ -96,7 +98,7 @@ class GameScene: SKScene {
                 }
             }
             if (button4.contains(location)) {
-                if (button4.contains(note1Pos) || button4.contains(note2Pos) || button4.contains(note3Pos) || button4.contains(note4Pos)){
+                if (button4.contains(note4Pos)){
                     
                     scoreKeeper+=1
                     
@@ -104,6 +106,9 @@ class GameScene: SKScene {
                     print(scoreKeeper)
                 }
             }
+            label.text = String(format: "SCORE:%d", scoreKeeper)
+            label.removeFromParent()
+            addChild(label)
         }
     }
     
@@ -152,15 +157,24 @@ class GameScene: SKScene {
         button3.setScale(1.5)
         button4.setScale(1.5)
         
-        button1.position = CGPoint(x: -screen_width+40, y: tapLine)
-        button2.position = CGPoint(x: -screen_width+200, y: tapLine)
-        button3.position = CGPoint(x: screen_width-200, y: tapLine)
-        button4.position = CGPoint(x: screen_width-40, y: tapLine)
+        button1.position = CGPoint(x: -screen_width+100, y: tapLine)
+        button2.position = CGPoint(x: -screen_width+290, y: tapLine)
+        button3.position = CGPoint(x: screen_width-290, y: tapLine)
+        button4.position = CGPoint(x: screen_width-100, y: tapLine)
         
         addChild(button1)
         addChild(button2)
         addChild(button3)
         addChild(button4)
+        
+        label.text = String(format: "SCORE:%d", scoreKeeper)
+        label.fontColor = SKColor.black
+        label.fontSize = 48
+        label.position = CGPoint(x: -screen_width+550, y: screen_height-300)
+        
+        addChild(label)
+        
+        
     }
     
     func playSong(map: BeatMap) {
@@ -188,23 +202,34 @@ class GameScene: SKScene {
         
         switch(dir){
         case directions.Left:
-            sprite.position = CGPoint(x: -screen_width+40, y: screen_height)
+            sprite.position = CGPoint(x: -screen_width+100, y: screen_height)
             note1 = sprite
         case directions.Down:
-            sprite.position = CGPoint(x: -screen_width+200, y: screen_height)
+            sprite.position = CGPoint(x: -screen_width+290, y: screen_height)
             note2 = sprite
         case directions.Up:
-            sprite.position = CGPoint(x: screen_width-200, y: screen_height)
+            sprite.position = CGPoint(x: screen_width-290, y: screen_height)
             note3 = sprite
         case directions.Right:
-            sprite.position = CGPoint(x: screen_width-40, y: screen_height)
+            sprite.position = CGPoint(x: screen_width-100, y: screen_height)
             note4 = sprite
+        case directions.End:
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
+                if let view = self.view {
+                    if let scene = SKScene(fileNamed: "GameOverScene") {
+                        scene.scaleMode = .aspectFit
+                        view.presentScene(scene, transition: SKTransition.crossFade(withDuration: 0.5))
+                    }
+                }
+            }
         default:
             break
         }
         
         
-        addChild(sprite)
+        if(dir != directions.End) {
+            addChild(sprite)
+        }
         
         let movement = SKAction.move(by: CGVector(dx:0, dy:2 * -screen_height), duration: 2.3)
         let removal = SKAction.removeFromParent()
